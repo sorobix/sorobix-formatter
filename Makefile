@@ -21,7 +21,7 @@ deps:
 .PHONY: build
 build: deps
 	@echo "> Building Binary"
-	go build ${LDFLAGS} -o ${BUILD_DIR}/${PROJECT_NAME}
+	CGO_ENABLED=0 go build ${LDFLAGS} -o ${BUILD_DIR}/${PROJECT_NAME}
 	@echo "> Binary has been built successfully"
 
 
