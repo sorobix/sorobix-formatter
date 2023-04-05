@@ -39,7 +39,7 @@ func base64Encoder(input []byte) string {
 func main() {
 	app := fiber.New()
 	app.Use(cors.New())
-	app.Get("/", func(c *fiber.Ctx) error {
+	app.Get("/formatter/", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
 			"status":  "true",
 			"details": "sorobix-formatter",
@@ -48,7 +48,7 @@ func main() {
 				"com/sorobix/sorobix-formatter",
 		})
 	})
-	app.Post("/", func(c *fiber.Ctx) error {
+	app.Post("/formatter/", func(c *fiber.Ctx) error {
 		var data request
 		err := c.BodyParser(&data)
 		if err != nil {
